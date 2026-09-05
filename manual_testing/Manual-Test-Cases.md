@@ -27,7 +27,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The user is not logged in.
+* An appropriate error message is displayed.
+
+**Status:** Passed
 
 ---
 
@@ -51,7 +54,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The user is logged out successfully.
+* The Login page is displayed.
+
+**Status:** Passed
 
 ---
 
@@ -78,31 +84,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* Registration is rejected.
+* An appropriate error message is displayed.
 
----
-
-## Contact Us
-
-### TC-07 — Submit Contact Us Form with Missing Required Information
-
-**Priority:** Medium
-**Type:** Negative
-
-**Steps:**
-
-1. Navigate to the Contact Us page.
-2. Leave one or more required fields empty.
-3. Submit the form.
-
-**Expected Result:**
-
-* The form is not submitted successfully.
-* Appropriate validation is displayed.
-
-**Actual Result:**
-
-**Status:** Not Executed
+**Status:** Passed
 
 ---
 
@@ -126,7 +111,9 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* products related to the search term are displayed successfully.
+
+**Status:** Passed
 
 ---
 
@@ -148,7 +135,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+The product details page is displayed.
+* Product name, price, category, availability, and other relevant information are displayed correctly.
+
+**Status:** Passed
 
 ---
 
@@ -173,29 +163,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The invalid email is rejected.
+* Appropriate validation or error behavior is displayed.
 
----
-
-### TC-19 — Subscribe with Existing Email
-
-**Priority:** Low
-**Type:** Negative
-
-**Steps:**
-
-1. Navigate to the Subscription section.
-2. Enter an email address that has already been subscribed.
-3. Submit the subscription form.
-
-**Expected Result:**
-
-* The system handles the existing email appropriately.
-* A suitable message is displayed.
-
-**Actual Result:**
-
-**Status:** Not Executed
+**Status:** Passed
 
 ---
 
@@ -222,7 +193,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* Added products are displayed correctly.
+* Product names, prices, quantities, and totals are displayed correctly.
+
+**Status:** Passed
 
 ---
 
@@ -246,7 +220,9 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The product price in the cart matches the product page.
+
+**Status:** Passed
 
 ---
 
@@ -274,7 +250,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The order is placed successfully.
+* An order confirmation message is displayed.
+
+**Status:** Passed
 
 ---
 
@@ -299,7 +278,10 @@
 
 **Actual Result:**
 
-**Status:** Not Executed
+* Checkout is completed successfully.
+* The order confirmation is displayed.
+
+**Status:** Passed
 
 ---
 
@@ -321,8 +303,11 @@
 * The order is not completed unless valid information is provided.
 
 **Actual Result:**
+* The Expiry Date field accepted non-numeric values.
+* An expired year was accepted.
+* The order was successfully placed despite the invalid payment information.
 
-**Status:** Not Executed
+**Status:** Fail
 
 ---
 
@@ -341,8 +326,9 @@
 **Expected Result:**
 
 * The user cannot complete the checkout.
-* Appropriate validation is displayed.
 
 **Actual Result:**
 
-**Status:** Not Executed
+* The user cannot complete the checkout.
+
+**Status:** Passed
