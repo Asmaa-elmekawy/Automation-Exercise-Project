@@ -48,3 +48,52 @@ The payment form does not properly validate the card expiry date, allowing order
 * Website: Automation Exercise
 * Browser: Chrome
 * Environment: Demo / Web
+
+---
+
+## BUG-002 — Search Returns Irrelevant Products
+
+**Severity:** Medium
+
+**Priority:** High
+
+**Status:** Open
+
+**Type:** Functional / Search
+
+### Related Test Case
+
+**TC-09 — Verify Product Search Results**
+
+### Preconditions
+
+* User is on the Products page.
+* Products are available in the product listing.
+
+### Steps to Reproduce
+
+1. Navigate to the Products page.
+2. Enter `dress` in the Search Product field.
+3. Click the Search button.
+4. Review the displayed search results.
+
+### Expected Result
+
+* Only products whose names contain the searched keyword `dress` should be displayed.
+* All displayed search results should be relevant to the entered search term.
+
+### Actual Result
+
+* The search results contain unrelated products that do not contain the keyword `dress` in their names.
+* For example, **"Sleeves Top and Short - Blue & Pink"** is displayed in the results.
+
+### Impact
+
+The search functionality returns irrelevant products, which may make it difficult for users to find the products they are looking for and reduces the accuracy and usability of the search feature.
+
+### Environment
+
+* Website: Automation Exercise
+* Browser: Chrome
+* Environment: Demo / Web
+
