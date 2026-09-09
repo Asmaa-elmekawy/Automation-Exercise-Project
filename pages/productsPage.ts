@@ -1,19 +1,18 @@
 import { expect, Locator, Page } from "@playwright/test";
 
 
-
-
-
 export class ProductsPage {
     searchBar: Locator;
     searchIconButton: Locator;
     productCards: Locator;
+    continueShoppingBtn: Locator;
+
 
     constructor(readonly page: Page) {
         this.searchBar = this.page.getByRole('textbox', { name: 'Search Product' })
         this.searchIconButton = this.page.locator('#submit_search')
         this.productCards = this.page.locator('.single-products');
-
+        this.continueShoppingBtn = this.page.getByRole('button', { name: 'Continue Shopping' })
     }
     async gotoProductsPage() {
         await this.page.getByRole('listitem').filter({ hasText: 'Products' }).click();
@@ -36,6 +35,23 @@ export class ProductsPage {
             return false;
         }
 
+    }
+
+    async addProductToCart(productName: string) {
+        const productCard = this.productCards.filter({ hasText: productName });
+        await productCard.getByText('Add to cart').first().click();
+    }
+
+    async continueShopping() {
+        await this.continueShoppingBtn.click();
+
+    }
+    async goToCart() {
+        await this.page.getByRole('link', { name: 'View Cart' }).click();
+
+    }
+    async verifyCartItem(productName: string) {
+        await expect(this.page.getByRole('link', { name: productName })).toBeVisible()
     }
 
 }
