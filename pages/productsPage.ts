@@ -11,7 +11,7 @@ export class ProductsPage {
     constructor(readonly page: Page) {
         this.searchBar = this.page.getByRole('textbox', { name: 'Search Product' })
         this.searchIconButton = this.page.locator('#submit_search')
-        this.productCards = this.page.locator('.single-products');
+        this.productCards = this.page.locator('.product-image-wrapper');
         this.continueShoppingBtn = this.page.getByRole('button', { name: 'Continue Shopping' })
     }
     async gotoProductsPage() {
@@ -53,6 +53,22 @@ export class ProductsPage {
     async verifyCartItem(productName: string) {
         await expect(this.page.getByRole('link', { name: productName })).toBeVisible()
     }
+
+    async viewProductDetails(productName: string) {
+        const productCard = this.productCards.filter({ hasText: productName });
+        await productCard.getByText('View Product').click();
+
+    }
+    async changeQuantity(quantity: string) {
+        await this.page.locator('#quantity').fill(quantity);
+    }
+    async addToCartButton() {
+        await this.page.getByRole('button', { name: 'Add to cart' }).click();
+    }
+    async verifyCartQuantity(quantity: string) {
+        expect(this.page.getByRole('button', { name: quantity })).toBeVisible();
+    }
+
 
 }
 

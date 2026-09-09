@@ -19,5 +19,16 @@ test('Add product to cart', async ({ productsPage, page }) => {
     await productsPage.goToCart();
     await productsPage.verifyCartItem("Blue Top");
     await productsPage.verifyCartItem("Men Tshirt");
+})
+
+test('verify quantity in cart', async ({ productsPage, page }) => {
+    await page.goto('https://automationexercise.com/');
+    await productsPage.gotoProductsPage();
+    await productsPage.viewProductDetails("Blue Top");
+    await productsPage.changeQuantity("3");
+    await productsPage.addToCartButton();
+    await productsPage.goToCart();
+    await productsPage.verifyCartQuantity("3");
+
 
 })
